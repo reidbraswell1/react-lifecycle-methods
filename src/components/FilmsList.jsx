@@ -11,10 +11,14 @@ class FilmsList extends Component {
         this.getFilms = this.getFilms.bind(this);
 
         console.log(`---End FilmsList Constructor---`);
+
+        this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     componentDidMount() {
-
+        console.log(`---Begin componentDidMount()---`);
+        this.getFilms();
+        console.log(`---End componentDidMount()---`);
     }
 
     getFilms() {
@@ -29,7 +33,14 @@ class FilmsList extends Component {
 
     render() {
         console.log(`---Begin FilmsList render()---`);
-        console.log(`---End FilmsList render()---`);
-        return (<ul></ul>);
-      }
+        return(<ul>
+            {this.state.list.map((value,index,array) => {
+                return(<li key={index}>value.title</li>)})}
+            </ul>);
+        /*{ this.state.list.map((value,index,array) => {
+            return (<li key={index}>{value.title}</li>)
+        })})*/
+        //console.log(`---End FilmsList render()---`);
+    }
 }
+export default FilmsList
