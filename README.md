@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# React Lifecycle Methods
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Exercise FilmsList Component 
 
-## Available Scripts
+    Create a new class component.
+    1. Create a new file called filmsList.jsx in your components/ folder
+    1. Import and destructure the Component from the react package
+    1. Add a class called `FilmsList` that renders an empty unordered list.
+    4. You should have:
+```
+        class FilmsList {
+            render() {
+            return <ul></ul>;
+            }
+        }
+```
+---
+2. Exercise 2: Films State
+    
+    Create state to manage the list of Studio Ghibli films.
+    1. Create a constructor for the `FilmsList` class
+    1. Define a `list` property on `this.state` that is assigned an empty array.
+---
+3. Exercise 3: Method to Get Films
 
-In the project directory, you can run:
+    Create a method to retrieve the list of films.
+    1. Create a method called `getFilms` on the `FilmsList` class
+    1. The method should call the fetch function with the following url parameter: https://ghibliapi.herokuapp.com/films
+    1. Call the `then` method on the returned promise
+        *   The first then call should receive a callback function that returns the result parsed to json
+    1. Make another then call on the returned promise
+        * The second then call should receive a callback function that uses `this.setState()` to set `this.state.list` equal to the result.
+    1. Lastly add a catch method call that should receive a callback function that will handle an error if one occurs
+---
+4. Exercise 4: Fetch Films
+    
+    Call getFilms() once the component mounts.
+    1. Create a `componentDidMount` method on the `FilmsList` class.
+    1. Call `getFilms` within the method body.
+---
+4.  Exercise 4: Render the Films List
 
-### `npm start`
+    Render the list to the DOM.
+    1. In the render method, update the content of the `ul` element to be a JSX expression that calls the map method on `this.state.list`.
+    1. Pass a callback function to the map method that returns a `li` element for each film in `this.state.list`.
+    1. Add the film's title as the text content of the `li`
+    1. Add a key prop to the `li` that is set to the film's id
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    
+    Feel free to add more content from each film to the list item's inner html.
+---
+5. Exercise 5: Render FilmsList Component
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    Render the `FilmsList` component in App.
+    1. Import the `FilmsList` component from `./components/FilmsList`
+    1. In the `render` method of the `App` class, render the `FilmsList` component below the `ul` from the previous lesson.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
