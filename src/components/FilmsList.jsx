@@ -11,8 +11,6 @@ class FilmsList extends Component {
         this.getFilms = this.getFilms.bind(this);
 
         console.log(`---End FilmsList Constructor---`);
-
-        this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     componentDidMount() {
@@ -26,21 +24,23 @@ class FilmsList extends Component {
         const URL = "https://ghibliapi.herokuapp.com/films";
         let response = fetch(URL)
             .then(response => response.json())
-            .then((data) => console.log(data))
+            .then((data) => {
+                console.log(data)
+                this.setState({list:data});
+            })
             .catch((err) => console.log(`Error on fetch = ${err}`))
         console.log(`---End FilmsList getFilms()---`);
     }
 
     render() {
         console.log(`---Begin FilmsList render()---`);
-        return(<ul>
-            {this.state.list.map((value,index,array) => {
-                return(<li key={index}>value.title</li>)})}
+        return(<ul className="list-group">
+                    {this.state.list.map((value,index,array) => {
+                        return(<li className="list-group-item" 
+                                    key={value.id} 
+                                    id={value.id}>{index+1}. {value.title} - {value.director}
+                                </li>)})}
             </ul>);
-        /*{ this.state.list.map((value,index,array) => {
-            return (<li key={index}>{value.title}</li>)
-        })})*/
-        //console.log(`---End FilmsList render()---`);
     }
 }
 export default FilmsList
