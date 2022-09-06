@@ -2,6 +2,7 @@
 
 ![React Life Cycle Methods](/ReactLifecycleMethods.png?raw=true "React Life Cycle Methods")
 
+---
 1. Exercise FilmsList Component 
 
     Create a new class component.
