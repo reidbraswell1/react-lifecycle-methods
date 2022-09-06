@@ -17,12 +17,18 @@ class App extends Component {
                 <h1>React Life Cycle Methods</h1>
               </div>
             </div>
-            <div className="row my-center">
+            <div className="row mt-3 my-center">
               <div className="col-5 my-center">
                 <h5 className="text-center">Film Title - Director</h5>
                 <FilmsList></FilmsList>
               </div>
             </div>
+            <div className="row mt-3">
+              <footer className="col-5 my-center footer">
+                <p>Life Cycle Methods Exercise 9/22</p>
+              </footer>
+            </div>
+
           </div>)
   }
 }
