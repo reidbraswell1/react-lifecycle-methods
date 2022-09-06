@@ -19,6 +19,11 @@ class FilmsList extends Component {
 
     getFilms() {
         console.log(`---Begin FilmsList getFilms()---`);
+        const URL = "https://ghibliapi.herokuapp.com/films";
+        let response = fetch(URL)
+            .then(response => response.json())
+            .then((data) => console.log(data))
+            .catch((err) => console.log(`Error on fetch = ${err}`))
         console.log(`---End FilmsList getFilms()---`);
     }
 
