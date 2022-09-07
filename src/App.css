@@ -7,3 +7,11 @@
   font-size: .8rem;
   color: green;
 }
+
+.error {
+  font-weight: bold;
+}
+
+.color-red {
+  color: red;
+}
