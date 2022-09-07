@@ -13,6 +13,7 @@ class App extends Component {
     console.log(`---End App constructor---`);
   }
   render() {
+    console.log(`---Begin App render()---`);
     return(<div className="container">
             <div className="row">
               <div class="col-6 text-center my-center mt-3">
