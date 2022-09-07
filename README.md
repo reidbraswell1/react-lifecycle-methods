@@ -18,13 +18,13 @@
         }
 ```
 ---
-2. Exercise 2: Films State
+2. __Exercise 2: Films State__
     
     Create state to manage the list of Studio Ghibli films.
     1. Create a constructor for the `FilmsList` class
     1. Define a `list` property on `this.state` that is assigned an empty array.
 ---
-3. Exercise 3: Method to Get Films
+3. __Exercise 3: Method to Get Films__
 
     Create a method to retrieve the list of films.
     1. Create a method called `getFilms` on the `FilmsList` class
@@ -35,13 +35,13 @@
         * The second then call should receive a callback function that uses `this.setState()` to set `this.state.list` equal to the result.
     1. Lastly add a catch method call that should receive a callback function that will handle an error if one occurs
 ---
-4. Exercise 4: Fetch Films
+4. __Exercise 4: Fetch Films__
     
     Call getFilms() once the component mounts.
     1. Create a `componentDidMount` method on the `FilmsList` class.
     1. Call `getFilms` within the method body.
 ---
-4.  Exercise 4: Render the Films List
+4.  __Exercise 4: Render the Films List__
 
     Render the list to the DOM.
     1. In the render method, update the content of the `ul` element to be a JSX expression that calls the map method on `this.state.list`.
@@ -52,7 +52,7 @@
     
     Feel free to add more content from each film to the list item's inner html.
 ---
-5. Exercise 5: Render FilmsList Component
+5. __Exercise 5: Render FilmsList Component__
 
     Render the `FilmsList` component in App.
     1. Import the `FilmsList` component from `./components/FilmsList`
