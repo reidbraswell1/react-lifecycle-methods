@@ -13,17 +13,26 @@ class FilmsList extends Component {
         console.log(`---End FilmsList Constructor---`);
     }
 
-    componentDidMount() {
+    componentDidMount(props) {
         console.log(`---Begin componentDidMount()---`);
-        this.getFilms();
+        this.getFilms(props);
         console.log(`---End componentDidMount()---`);
     }
 
-    getFilms() {
+    getFilms(props) {
         console.log(`---Begin FilmsList getFilms()---`);
+
         const BAD_URL = "https://ghibliapi.herokuapp.com/filmss"
         const GOOD_URL = "https://ghibliapi.herokuapp.com/films"
-        const URL = GOOD_URL;
+        let URL = "";
+
+        // Set URL to the good url or bad based on the errTest prop
+        if(this.props.errTest) {
+            URL = BAD_URL;
+        }
+        else {
+            URL = GOOD_URL;
+        }
         fetch(URL)
             .then((response) => {
                 if(response.ok) { 
@@ -38,8 +47,8 @@ class FilmsList extends Component {
                 this.setState({list:data, errorText:""});
             })
             .catch((err) => { 
-                console.log(`Error on fetch = ${err}`);
-                this.setState( { list: [], errorText: `An error has occurred fetching data from ${URL}: ${err}`});
+                console.log(`${err} fetching from URL: ${URL}`);
+                this.setState( { list: [], errorText: `${err} fetching from URL: ${URL}`});
             });
         console.log(`---End FilmsList getFilms()---`);
     }
