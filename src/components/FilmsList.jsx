@@ -13,13 +13,13 @@ class FilmsList extends Component {
         console.log(`---End FilmsList Constructor---`);
     }
 
-    componentDidMount(props) {
+    componentDidMount() {
         console.log(`---Begin componentDidMount()---`);
-        this.getFilms(props);
+        this.getFilms();
         console.log(`---End componentDidMount()---`);
     }
 
-    getFilms(props) {
+    getFilms() {
         console.log(`---Begin FilmsList getFilms()---`);
 
         const BAD_URL = "https://ghibliapi.herokuapp.com/filmss"
