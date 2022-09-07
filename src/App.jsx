@@ -8,6 +8,9 @@ class App extends Component {
   constructor(props) {
     console.log(`---Begin App constructor---`);
     super(props)
+    
+    this.state = { errorTest: false }
+
     console.log(`---End App constructor---`);
   }
   render() {
@@ -20,7 +23,7 @@ class App extends Component {
             <div className="row mt-3 my-center">
               <div className="col-5 my-center">
                 <h5 className="text-center">Film Title - Director</h5>
-                <FilmsList></FilmsList>
+                <FilmsList errTest={this.state.errorTest}></FilmsList>
               </div>
             </div>
             <div className="row mt-3">
