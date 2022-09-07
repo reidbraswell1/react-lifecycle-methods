@@ -3,7 +3,7 @@
 ![React Life Cycle Methods](/ReactLifecycleMethods.png?raw=true "React Life Cycle Methods")
 
 ---
-1. Exercise FilmsList Component 
+1. __Exercise FilmsList Component__ 
 
     Create a new class component.
     1. Create a new file called filmsList.jsx in your components/ folder
