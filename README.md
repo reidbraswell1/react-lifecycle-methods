@@ -28,16 +28,16 @@
 
     Create a method to retrieve the list of films.
     1. Create a method called `getFilms` on the `FilmsList` class
-    1. The method should call the fetch function with the following url parameter: https://ghibliapi.herokuapp.com/films
+    1. The method should call the `fetch` function with the following url parameter: https://ghibliapi.herokuapp.com/films
     1. Call the `then` method on the returned promise
-        *   The first then call should receive a callback function that returns the result parsed to json
-    1. Make another then call on the returned promise
-        * The second then call should receive a callback function that uses `this.setState()` to set `this.state.list` equal to the result.
-    1. Lastly add a catch method call that should receive a callback function that will handle an error if one occurs
+        *   The first `then` call should receive a callback function that __returns the result parsed to json__.
+    1. Make another `then` call on the returned promise
+        * The second `then` call should receive a callback function that uses `this.setState()` to __set `this.state.list` equal to the result__.
+    1. Lastly add a `catch` method call that should receive a callback function that will handle an error if one occurs
 ---
 4. __Exercise 4: Fetch Films__
     
-    Call getFilms() once the component mounts.
+    Call `getFilms()` once the component mounts.
     1. Create a `componentDidMount` method on the `FilmsList` class.
     1. Call `getFilms` within the method body.
 ---
